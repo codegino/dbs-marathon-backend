@@ -18,7 +18,7 @@ const port = process.env.PORT;
 app.use(bodyParser.json());
 
 app.post('/users', (req, res) => {
-  const body = _.pick(req.body, ['email', 'mobile', 'fullname', 'gender']);
+  const body = _.pick(req.body, ['email', 'mobile', 'fullname', 'gender', 'race']);
   const user = new User(body);
 
   user.save().then(() => res.status(200).send(user))
